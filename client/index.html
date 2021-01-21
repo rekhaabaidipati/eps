@@ -6,10 +6,33 @@
 	<meta charset="UTF-8" />
   <link href="./styles.css" rel="stylesheet">
 
+  <script src="https://www.paypal.com/sdk/js?client-id=AfPbdUbV4LJdK0-0B0QPeUyHnzGgVhIwZfBO3wYRoazaSYRJAIKwwHnfI0EbekJB42FJuVi-3-vgsQvi&components=buttons,fields,marks&buyer-country=AT&currency=EUR"></script>
+
 </head>
 
 <body>
-  <div id="app"></div>
+    <h3>Enter payment method</h3>
+
+    <label>
+      <input
+        type="radio"
+        name="payment-option"
+        value="paypal"
+        id="paypal-radio"
+        checked
+      />
+      <span id="paypal-mark"></span>
+    </label>
+
+    <label>
+      <input id="eps-radio" value="eps" name="payment-option" type="radio" />
+      <span id="eps-mark"></span>
+    </label>
+
+    <div id="eps-container"></div>
+
+    <div id="paypal-btn"></div>
+    <div id="eps-btn"></div>
 
 	<script src="./index.js">
 	</script>
