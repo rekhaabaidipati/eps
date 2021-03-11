@@ -25,20 +25,25 @@ app.get("/", (req, res) => {
  app.post("/capture/:orderId", async (req, res) => {
   const { orderId } = req.params
 
-  const { access_token } = await getAccessToken();
-  
-  const { data } = await axios({
-    url: `${PAYPAL_API_BASE}/v2/checkout/orders/${orderId}/capture`,
-    method: "post",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
+  try {
+    const { access_token } = await getAccessToken();
 
-  console.log(`💰 Payment captured!`);
-  res.json(data)
+    const { data } = await axios({
+      url: `${PAYPAL_API_BASE}/v2/checkout/orders/${orderId}/capture`,
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
+  
+    console.log(`💰 Payment captured!`);
+    res.json(data)
+  } catch(err){
+    console.error(err)
+    res.sendStatus(400);
+  }
 });
 
 /**
