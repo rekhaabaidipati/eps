@@ -3,7 +3,7 @@
 This integration uses the JavaScript SDK to accept EPS payments
 
 
-See a [hosted version](https:/eps-js-sdk.herokuapp.com) of the sample
+See a [hosted version](https://eps-js-sdk.herokuapp.com/) of the sample
 
 
 ### How to run locally
