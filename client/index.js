@@ -44,7 +44,7 @@ paypal
   .render("#eps-mark");
 
 paypal
-  .Fields({
+  .PaymentFields({
     fundingSource: paypal.FUNDING.EPS,
     style: {},
     fields: {
@@ -90,7 +90,8 @@ paypal
   })
   .render("#eps-btn");
 
-document.getElementById("paypal-btn").style.display = "none";
+document.getElementById("eps-btn").style.display = "none";
+document.getElementById("eps-container").style.display = "none";
 
 // Listen for changes to the radio buttons
 document.querySelectorAll("input[name=payment-option]").forEach((el) => {
