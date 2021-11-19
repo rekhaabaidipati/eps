@@ -58,7 +58,6 @@ paypal
 paypal
   .Buttons({
     fundingSource: paypal.FUNDING.EPS,
-    upgradeLSAT: true,
     style: {
       label: "pay",
     },
